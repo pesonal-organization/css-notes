@@ -1,0 +1,720 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Class 1 – Introduction to JavaScript</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="class-page">
+  <div class="container">
+
+    <div class="nav-links">
+      <a href="index.html" class="nav-btn">← Back to Index</a>
+     
+    </div>
+<!------ Write Topic Name here ------->
+    <h1 class="lecture-heading">navbar with custom input</h1>
+
+    <!-- Topics Covered -->
+    <div class="card topics-card">
+      <h2>📋 Topics Covered</h2>
+      <ul>
+        <li>write here first question that you are studying in this file</li>
+        
+        </ul>
+    </div>
+   
+    <!----------------------------------- Question No 1 ---------------------->
+    <div class="card question-card">
+      <h2> Question 1❓ </h2>
+      <p>Q: Create a custom navbar and input?  </p>
+    </div>
+  <!----- answers ----->
+    <div class="card answer-card">
+      <h2>✅ Answer</h2>
+      <p>
+      First take a form tag.<br>
+      Inside form tag take a button and an input<br> 
+      take  font-awesome icon in button<br> 
+      <br> 
+      Apply display flex on form it will remove space between button and input <br> 
+      <br> apply flex-grow 1 or width on form<br> 
+      apply flex-grow 1 on input , input take all available space in form and 
+      it does not tease button .
+      <br> 
+      make background transparent of button and input<br> 
+      give padding to button <br> 
+      apply border-none on input and button <br>
+      give any background color to form <br> 
+      apply form input:focus <pre>outline:none</pre>
+
+
+      </p>
+    </div>
+<!-------- example -------->
+    <div class="card example1-card">
+      <h2>💡 Example</h2>
+      <pre><code>
+       <xmp>
+        html 
+
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- fontawesome -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="media.css">
+</head>
+<body>
+    <!-- header -->
+    <header>
+        <div class="headerleft">
+            <div class="logo"><h1>Blinkit</h1></div>
+            <div class="headerAddress">
+                <h3>Delivery in a minutes</h3>
+                <p>I am learning js</p>
+            </div>
+        </div>
+        <form class="searchBox">
+            <button><i class="fa-solid fa-magnifying-glass"></i></button>
+            <input type="text"/>
+        </form>
+        <div class="headerBtn">
+            <button>Login</button>
+            <button><i class="fa-solid fa-cart-shopping"></i> &nbsp;My Card</button>
+        </div>
+    </header>
+</body>
+</html>
+
+___________________________________
+css 
+
+body{margin: 0;
+padding: 0;
+font-family: sans-serif;
+box-sizing: border-box;}
+header{display: flex;
+    align-items: center;
+    gap: 30px;
+
+}
+
+.headerleft{display: flex;
+align-items: center;
+padding: 20px;}
+.logo{padding: 20px;
+}
+
+.searchBox{flex-grow: 1;
+
+display: flex;
+background-color: rgb(212, 212, 143);
+border-radius: 15px;}
+.searchBox input{flex-grow: 1;
+background: transparent;
+border:none;
+}
+.searchBox button{padding: 15px;
+background: transparent;
+border:none;}
+
+.searchBox input:focus{outline: none;}
+
+.headerBtn {display: flex;
+    margin-right: 40px;
+    gap:40px;
+}
+.headerBtn button{padding: 15px;
+    background: transparent;
+    border: none;
+    font-size: 20px;
+}
+.headerBtn :last-child{background: seagreen;
+border-radius: 10px;} 
+
+___________________________________
+media query
+
+@media (max-width: 575px){
+    header{display: flex;
+        flex-direction: column;
+    align-items: stretch;
+padding:10px}
+       .logo{padding: 10px}
+       .headerAddress{padding: 10px;}
+       .searchBox button{padding : 10px;}
+       .headerBtn{position: fixed;
+    bottom: 0;
+width: 100%;
+justify-content: center;
+margin-right: 0;}
+}
+       </xmp>
+
+            </code></pre>
+    </div>
+<!------- question 1 completed ----- -->
+ <!----------------------------------- Question No 2 ---------------------->
+    <div class="card question-card">
+      <h2> Question 2❓ </h2>
+      <p>Q: create a banner section below navbar?  </p>
+    </div>
+  <!----- answers ----->
+    <div class="card answer-card">
+      <h2>✅ Answer</h2>
+      <p>
+       we give width of 100% to banner section if we have one image 
+       it take 100% width of its parents if parent has 1280px width it takes 1280px. if we 
+       donot give banner section img width 100% than image is most longer
+      </p>
+    </div>
+<!-------- example -------->
+    <div class="card example1-card">
+      <h2>💡 Example</h2>
+      <pre><code>
+       <xmp>
+        html code 
+        ___________________________________
+          <!-- bannersection -->
+     <section class="bannersection">
+        <img src="./assets/Everything delivered in minutes _ Blinkit_files/./Group-33704.jpg" alt="">
+     </section>
+     ___________________________________
+     css 
+
+     /* banner seciton  */
+.bannersection img{width: 100%;}
+.bannersection{max-width: 1280px;
+margin: auto;}
+       </xmp>
+
+            </code></pre>
+    </div>
+<!------- question 2 completed ----- -->
+ <!----------------------------------- Question No 3 ---------------------->
+    <div class="card question-card">
+      <h2> Question 3❓ </h2>
+      <p>Q: create a banner section of web?  </p>
+    </div>
+  <!----- answers ----->
+    <div class="card answer-card">
+      <h2>✅ Answer</h2>
+      <p>
+       we take a maindiv for banner secton . we give maindiv max-width for example 1280px. and apply margin auto it bring banner to the 
+       center of dom. <br> 
+       we keep an image in maindiv but image is long and when we give width:100% to img it auto set in our main div and it take width of parent means 1280px.
+      </p>
+    </div>
+<!-------- example -------->
+    <div class="card example1-card">
+      <h2>💡 Example</h2>
+      <pre><code>
+       <xmp>
+        html 
+
+        <!-- bannersection -->
+     <section class="bannersection">
+        <img src="./assets/Everything delivered in minutes _ Blinkit_files/./Group-33704.jpg" alt="">
+     </section>
+
+     ___________________________________
+     css 
+
+     /* banner seciton  */
+.bannersection img{width: 100%;}
+.bannersection{max-width: 1280px;
+margin: auto;}
+       </xmp>
+
+            </code></pre>
+    </div>
+<!------- question 3 completed ----- -->
+ <!----------------------------------- Question No 4 ---------------------->
+    <div class="card question-card">
+      <h2> Question 4❓ </h2>
+      <p>Q: take three image in row?  </p>
+    </div>
+  <!----- answers ----->
+    <div class="card answer-card">
+      <h2>✅ Answer</h2>
+      <p>
+       take maindiv give maindiv max-width:1280px , apply display flex and margin auto. 
+       take imgdiv and take in imgdiv flex-basis: 28%;
+       <br> 
+       take 1% margin<br> 
+       and now set image , apply img width:100% , it take width of 28% of 1280px. and in the last some 
+       space remain empty.
+      </p>
+    </div>
+<!-------- example -------->
+    <div class="card example1-card">
+      <h2>💡 Example</h2>
+      <pre><code>
+       <xmp>
+        html 
+
+        <!-- orderbanner seciton  -->
+      <section class="orderbanner">
+        <div class="orderbanneritem"><img src="./assets/Everything delivered in minutes _ Blinkit_files//pharmacy-WEB.jpg" alt=""></div>
+        <div class="orderbanneritem"><img src="./assets/Everything delivered in minutes _ Blinkit_files/Pet-Care_WEB.jpg" alt=""></div>
+        <div class="orderbanneritem"><img src="./assets/Everything delivered in minutes _ Blinkit_files/babycare-WEB.jpg" alt=""></div>
+      </section>
+      ___________________________________
+      css
+
+      /* order banner */
+.orderbanner{display: flex;
+max-width: 1280px;
+margin: auto;}
+.orderbanner .orderbanneritem{
+    flex-basis: 28%;
+    margin: 1%;
+}
+.orderbanner .orderbanneritem img{width: 100%;}
+
+___________________________________
+media query 
+
+.orderbanner{flex-direction: column;
+padding:10px;}
+       </xmp>
+
+            </code></pre>
+    </div>
+<!------- question 4 completed ----- -->
+ <!----------------------------------- Question No 5 ---------------------->
+    <div class="card question-card">
+      <h2> Question 5❓ </h2>
+      <p>Q: create catageory section>  </p>
+    </div>
+  <!----- answers ----->
+    <div class="card answer-card">
+      <h2>✅ Answer</h2>
+      <p>
+first take maindiv ,give it max-width: 1280px and than take subdiv 
+and give flex-basis:10% to subdiv and than give img width 100% that we keep in sub-div.
+      </p>
+    </div>
+<!-------- example -------->
+    <div class="card example1-card">
+      <h2>💡 Example</h2>
+      <pre><code>
+       <xmp>
+        html 
+
+         <!-- catageorysection -->
+       <section class="catageory">
+        <div class="catageoryitem">
+            <img src="./assets/Everything delivered in minutes _ Blinkit_files/Slice-11.png" alt="">
+        </div>
+        <div class="catageoryitem">
+            <img src="./assets/Everything delivered in minutes _ Blinkit_files/paan-corner_web.png" alt="">
+        </div>
+        <div class="catageoryitem">
+            <img src="./assets/Everything delivered in minutes _ Blinkit_files/Slice-2_10.png" alt="">
+        </div>
+        <div class="catageoryitem">
+            <img src="./assets/Everything delivered in minutes _ Blinkit_files/Slice-3_9.png" alt="">
+        </div>
+        <div class="catageoryitem">
+            <img src="./assets/Everything delivered in minutes _ Blinkit_files/Slice-4_9.png" alt="">
+        </div>
+        <div class="catageoryitem">
+            <img src="./assets/Everything delivered in minutes _ Blinkit_files/Slice-5_4.png" alt="">
+        </div>
+        <div class="catageoryitem">
+            <img src="./assets/Everything delivered in minutes _ Blinkit_files/Slice-6_5.png" alt="">
+        </div>
+        <div class="catageoryitem">
+            <img src="./assets/Everything delivered in minutes _ Blinkit_files/Slice-7_3.png" alt="">
+        </div>
+        <div class="catageoryitem">
+            <img src="./assets/Everything delivered in minutes _ Blinkit_files/Slice-8_4.png" alt="">
+        </div>
+        <div class="catageoryitem">
+            <img src="./assets/Everything delivered in minutes _ Blinkit_files/Slice-9_3.png" alt="">
+        </div>
+
+
+        <div class="catageoryitem">
+            <img src="./assets/Everything delivered in minutes _ Blinkit_files/Slice-11.png" alt="">
+        </div>
+        <div class="catageoryitem">
+            <img src="./assets/Everything delivered in minutes _ Blinkit_files/paan-corner_web.png" alt="">
+        </div>
+        <div class="catageoryitem">
+            <img src="./assets/Everything delivered in minutes _ Blinkit_files/Slice-2_10.png" alt="">
+        </div>
+        <div class="catageoryitem">
+            <img src="./assets/Everything delivered in minutes _ Blinkit_files/Slice-3_9.png" alt="">
+        </div>
+        <div class="catageoryitem">
+            <img src="./assets/Everything delivered in minutes _ Blinkit_files/Slice-4_9.png" alt="">
+        </div>
+        <div class="catageoryitem">
+            <img src="./assets/Everything delivered in minutes _ Blinkit_files/Slice-5_4.png" alt="">
+        </div>
+        <div class="catageoryitem">
+            <img src="./assets/Everything delivered in minutes _ Blinkit_files/Slice-6_5.png" alt="">
+        </div>
+        <div class="catageoryitem">
+            <img src="./assets/Everything delivered in minutes _ Blinkit_files/Slice-7_3.png" alt="">
+        </div>
+        <div class="catageoryitem">
+            <img src="./assets/Everything delivered in minutes _ Blinkit_files/Slice-8_4.png" alt="">
+        </div>
+        <div class="catageoryitem">
+            <img src="./assets/Everything delivered in minutes _ Blinkit_files/Slice-9_3.png" alt="">
+        </div>
+       </section>
+       ___________________________________
+       css 
+
+       /* catageroy */
+.catageory{display: flex;
+max-width: 1280px;
+flex-wrap: wrap;
+margin: auto;}
+.catageoryitem{
+    flex-basis: 10%;
+}
+.catageoryitem img{width: 100%;}
+
+___________________________________
+mediaquery 
+
+.catageoryitem{flex-basis: 25%;}
+       </xmp>
+
+            </code></pre>
+    </div>
+<!------- question 5 completed ----- -->
+ <!----------------------------------- Question No 6 ---------------------->
+    <div class="card question-card">
+      <h2> Question 6❓ </h2>
+      <p>Q:  </p>
+    </div>
+  <!----- answers ----->
+    <div class="card answer-card">
+      <h2>✅ Answer</h2>
+      <p>
+       
+      </p>
+    </div>
+<!-------- example -------->
+    <div class="card example1-card">
+      <h2>💡 Example</h2>
+      <pre><code>
+       
+
+            </code></pre>
+    </div>
+<!------- question 6 completed ----- -->
+ <!----------------------------------- Question No 7 ---------------------->
+    <div class="card question-card">
+      <h2> Question 7❓ </h2>
+      <p>Q:  </p>
+    </div>
+  <!----- answers ----->
+    <div class="card answer-card">
+      <h2>✅ Answer</h2>
+      <p>
+       
+      </p>
+    </div>
+<!-------- example -------->
+    <div class="card example1-card">
+      <h2>💡 Example</h2>
+      <pre><code>
+       
+
+            </code></pre>
+    </div>
+<!------- question 7 completed ----- -->
+ <!----------------------------------- Question No 8 ---------------------->
+    <div class="card question-card">
+      <h2> Question 8❓ </h2>
+      <p>Q:  </p>
+    </div>
+  <!----- answers ----->
+    <div class="card answer-card">
+      <h2>✅ Answer</h2>
+      <p>
+       
+      </p>
+    </div>
+<!-------- example -------->
+    <div class="card example1-card">
+      <h2>💡 Example</h2>
+      <pre><code>
+       
+
+            </code></pre>
+    </div>
+<!------- question 8 completed ----- -->
+ <!----------------------------------- Question No 9 ---------------------->
+    <div class="card question-card">
+      <h2> Question 9❓ </h2>
+      <p>Q:  </p>
+    </div>
+  <!----- answers ----->
+    <div class="card answer-card">
+      <h2>✅ Answer</h2>
+      <p>
+       
+      </p>
+    </div>
+<!-------- example -------->
+    <div class="card example1-card">
+      <h2>💡 Example</h2>
+      <pre><code>
+       
+
+            </code></pre>
+    </div>
+<!------- question 9 completed ----- -->
+ <!----------------------------------- Question No 10 ---------------------->
+    <div class="card question-card">
+      <h2> Question 10❓ </h2>
+      <p>Q:  </p>
+    </div>
+  <!----- answers ----->
+    <div class="card answer-card">
+      <h2>✅ Answer</h2>
+      <p>
+       
+      </p>
+    </div>
+<!-------- example -------->
+    <div class="card example1-card">
+      <h2>💡 Example</h2>
+      <pre><code>
+       
+
+            </code></pre>
+    </div>
+<!------- question 11 completed ----- -->
+ <!----------------------------------- Question No 12 ---------------------->
+    <div class="card question-card">
+      <h2> Question 12❓ </h2>
+      <p>Q:  </p>
+    </div>
+  <!----- answers ----->
+    <div class="card answer-card">
+      <h2>✅ Answer</h2>
+      <p>
+       
+      </p>
+    </div>
+<!-------- example -------->
+    <div class="card example1-card">
+      <h2>💡 Example</h2>
+      <pre><code>
+       
+
+            </code></pre>
+    </div>
+<!------- question 12 completed ----- -->
+ <!----------------------------------- Question No 13 ---------------------->
+    <div class="card question-card">
+      <h2> Question 13❓ </h2>
+      <p>Q:  </p>
+    </div>
+  <!----- answers ----->
+    <div class="card answer-card">
+      <h2>✅ Answer</h2>
+      <p>
+       
+      </p>
+    </div>
+<!-------- example -------->
+    <div class="card example1-card">
+      <h2>💡 Example</h2>
+      <pre><code>
+       
+
+            </code></pre>
+    </div>
+<!------- question 13 completed ----- -->
+ <!----------------------------------- Question No 14 ---------------------->
+    <div class="card question-card">
+      <h2> Question 14❓ </h2>
+      <p>Q:  </p>
+    </div>
+  <!----- answers ----->
+    <div class="card answer-card">
+      <h2>✅ Answer</h2>
+      <p>
+       
+      </p>
+    </div>
+<!-------- example -------->
+    <div class="card example1-card">
+      <h2>💡 Example</h2>
+      <pre><code>
+       
+
+            </code></pre>
+    </div>
+<!------- question 14 completed ----- -->
+ <!----------------------------------- Question No 15 ---------------------->
+    <div class="card question-card">
+      <h2> Question 15❓ </h2>
+      <p>Q:  </p>
+    </div>
+  <!----- answers ----->
+    <div class="card answer-card">
+      <h2>✅ Answer</h2>
+      <p>
+       
+      </p>
+    </div>
+<!-------- example -------->
+    <div class="card example1-card">
+      <h2>💡 Example</h2>
+      <pre><code>
+       
+
+            </code></pre>
+    </div>
+<!------- question 15 completed ----- -->
+ <!----------------------------------- Question No 15 ---------------------->
+    <div class="card question-card">
+      <h2> Question 15❓ </h2>
+      <p>Q:  </p>
+    </div>
+  <!----- answers ----->
+    <div class="card answer-card">
+      <h2>✅ Answer</h2>
+      <p>
+       
+      </p>
+    </div>
+<!-------- example -------->
+    <div class="card example1-card">
+      <h2>💡 Example</h2>
+      <pre><code>
+       
+
+            </code></pre>
+    </div>
+<!------- question 15 completed ----- -->
+ <!----------------------------------- Question No 16 ---------------------->
+    <div class="card question-card">
+      <h2> Question 16❓ </h2>
+      <p>Q:  </p>
+    </div>
+  <!----- answers ----->
+    <div class="card answer-card">
+      <h2>✅ Answer</h2>
+      <p>
+       
+      </p>
+    </div>
+<!-------- example -------->
+    <div class="card example1-card">
+      <h2>💡 Example</h2>
+      <pre><code>
+       
+
+            </code></pre>
+    </div>
+<!------- question 16 completed ----- -->
+ <!----------------------------------- Question No 17 ---------------------->
+    <div class="card question-card">
+      <h2> Question 17❓ </h2>
+      <p>Q:  </p>
+    </div>
+  <!----- answers ----->
+    <div class="card answer-card">
+      <h2>✅ Answer</h2>
+      <p>
+       
+      </p>
+    </div>
+<!-------- example -------->
+    <div class="card example1-card">
+      <h2>💡 Example</h2>
+      <pre><code>
+       
+
+            </code></pre>
+    </div>
+<!------- question 17 completed ----- -->
+ <!----------------------------------- Question No 18 ---------------------->
+    <div class="card question-card">
+      <h2> Question 18❓ </h2>
+      <p>Q:  </p>
+    </div>
+  <!----- answers ----->
+    <div class="card answer-card">
+      <h2>✅ Answer</h2>
+      <p>
+       
+      </p>
+    </div>
+<!-------- example -------->
+    <div class="card example1-card">
+      <h2>💡 Example</h2>
+      <pre><code>
+       
+
+            </code></pre>
+    </div>
+<!------- question completed ----- -->
+ <!----------------------------------- Question No 19 ---------------------->
+    <div class="card question-card">
+      <h2> Question 19❓ </h2>
+      <p>Q:  </p>
+    </div>
+  <!----- answers ----->
+    <div class="card answer-card">
+      <h2>✅ Answer</h2>
+      <p>
+       
+      </p>
+    </div>
+<!-------- example -------->
+    <div class="card example1-card">
+      <h2>💡 Example</h2>
+      <pre><code>
+       
+
+            </code></pre>
+    </div>
+<!------- question 19 completed ----- -->
+ <!----------------------------------- Question No 20 ---------------------->
+    <div class="card question-card">
+      <h2> Question 20❓ </h2>
+      <p>Q:  </p>
+    </div>
+  <!----- answers ----->
+    <div class="card answer-card">
+      <h2>✅ Answer</h2>
+      <p>
+       
+      </p>
+    </div>
+<!-------- example -------->
+    <div class="card example1-card">
+      <h2>💡 Example</h2>
+      <pre><code>
+       
+
+            </code></pre>
+    </div>
+<!------- question 20 completed ----- -->
+
+    
+
+    
+<!---- main div closed below--- -->
+  </div>
+</body>
+</html> 
