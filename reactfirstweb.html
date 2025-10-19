@@ -1,0 +1,1112 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Class 1 – Introduction to JavaScript</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="class-page">
+  <div class="container">
+
+    <div class="nav-links">
+      <a href="index.html" class="nav-btn">← Back to Index</a>
+     
+    </div>
+<!------ Write Topic Name here ------->
+    <h1 class="lecture-heading">Structure page</h1>
+
+    <!-- Topics Covered -->
+    <div class="card topics-card">
+      <h2>📋 Topics Covered</h2>
+      <ul>
+        <li>write here first question that you are studying in this file</li>
+        
+        </ul>
+    </div>
+   
+    <!----------------------------------- Question No 1 ---------------------->
+    <div class="card question-card">
+      <h2> Question 1❓ </h2>
+      <p>Q: My first reactjs web?  </p>
+    </div>
+  <!----- answers ----->
+    <div class="card answer-card">
+      <h2>✅ Answer</h2>
+      <p>
+       see in example:
+      </p>
+    </div>
+<!-------- example -------->
+    <div class="card example1-card">
+      <h2>💡 Example</h2>
+      <pre><code>
+       <xmp>
+        App.css 
+
+        
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+*{padding: 0;
+margin: 0;
+box-sizing: border-box;}
+ html, body, #root, .app-layout {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+} 
+___________________________________
+App.jsx 
+
+import React from "react";
+import {Routes,Route} from 'react-router-dom'
+import Home from './Components/Home';
+import About from "./Components/About";
+import Policies from "./Components/Policies";
+import Services from "./Components/Services";
+import Contact from "./Components/Contact";
+import Error from "./Components/Error";
+import List from "./Components/list";
+import Footer from './Components/Footer';
+
+const App = ()=>{
+  return(
+    <>
+   <div className="app-layout">
+     <List/>
+    <Routes>
+<Route exact path="/" element={<Home/>}/>
+<Route path="/about" element={<About/>}/>
+<Route path="/policies" element={<Policies/>}/>
+<Route path="/contact" element={<Contact/>}/>
+<Route path="/services" element={<Services/>}/>
+<Route path="*" element={<Error/>}/>
+
+    </Routes>
+    <Footer/>
+   </div>
+    </>
+  )
+}
+export default App;
+___________________________________
+main.jsx 
+
+
+import { createRoot } from 'react-dom/client'
+import './App.css';
+import App from './App.jsx'
+import { BrowserRouter } from 'react-router-dom';
+
+createRoot(document.getElementById('root')).render(
+ 
+ <BrowserRouter>
+    <App />
+ </BrowserRouter>
+  
+)
+
+___________________________________
+home.jsx 
+
+import React from "react";
+import {Link} from "react-router-dom";
+import home from '../assets/home.jpeg';
+import '../Css/homeAbout.css';
+import Same from './Same.jsx';
+const Home = ()=>{
+return(
+   <>
+   <Same
+   title = 'Learning made easy'
+   text = "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis eaque non exercitationem explicabo saepe aperiam vitae in animi. Dolorum voluptas cumque blanditiis suscipit architecto quasi nam quae esse? Inventore, ea."
+   imgsrc = {home}
+   btn = 'Read More'
+   
+   />
+   </>
+)
+}
+export default Home;
+___________________________________
+homeAbout.css 
+
+
+.mainsection{
+margin: auto;
+justify-content:space-around;
+display: flex;
+align-items: center;
+padding-top: 20px;
+}
+.contentbox{width: 40%;
+background-color: orange;
+padding-left:1rem}
+.contentbox h1{font-size: 40px;
+color:#301934;
+text-align: center;}
+.contentbox p{font-size: 19.2px;
+margin: 16px 0;
+font-family:"Open Sans", sans-serif;}
+.btnbox{width: 100%;
+display: flex;
+justify-content: space-around;
+margin-top: 2rem;
+padding-bottom: 20px;}
+.btn{padding : 8px 20px;
+    border:1px solid white;
+    background-color: aqua;
+    border-radius: 20px;
+}
+.readmore{text-decoration: none;}
+
+.imgcontainer{width: 50%;
+    text-align: center;
+}
+.imgcontainer img{width: 70%;
+border-radius: 40%;}
+/* media query */
+@media(max-width:900px){html{font-size: 14px;}}
+@media(max-width:768px){.mainsection{
+flex-direction: column;
+}
+.contentbox{width: 90%;}
+.contentbox h1{font-size: 32px;}
+.contentbox p{font-size: 16px;}
+.imgcontainer{width: 80%;
+margin-top: 20px;}}
+___________________________________
+about.jsx 
+
+import React from "react";
+import {Link} from "react-router-dom";
+import aboutImg from '../assets/aboutImg.jpeg';
+import Same from "./Same";
+const About = ()=>{
+return(
+    <>
+    <Same
+   title = 'Know More About Us'
+      text = "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis eaque non exercitationem explicabo saepe aperiam vitae in animi. Dolorum voluptas cumque blanditiis suscipit architecto quasi nam quae esse? Inventore, ea."
+      imgsrc = {aboutImg}
+      btn = 'Know More'
+    
+    
+    />
+     
+    </>
+)
+}
+export default About;
+___________________________________
+card.jsx 
+
+import React from "react";
+import home from '../assets/home.jpeg';
+import hom2 from '../assets/hom2.jpeg';
+import home3 from '../assets/home3.jpeg';
+
+import { Link } from "react-router-dom";
+const Card = (props)=>{
+    return(
+        <>
+         {/* <div className="card">
+    <h2>Web Development</h2>
+    <img src={props.serviceImg} alt="" />
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, ea! Dolore inventore et cumque ea minus incidunt iste assumenda hic dignissimos fugit eius, consequuntur veritatis maxime exercitationem nam ad quos!</p>
+    <div className="btnbox">
+           <div className="btn">
+               <Link to='/about' className="readmore">Start Learning</Link>
+           </div>
+       </div>
+  </div> */}
+
+
+   <div className="card">
+    <h2>Web Development</h2>
+    <img src={props.serviceImg} alt="" />
+    <p>{props.serviceText}</p>
+    <div className="btnbox">
+           <div className="btn">
+               <Link to='/about' className="readmore">{props.serviceBtn}</Link>
+           </div>
+       </div>
+  </div>
+ 
+        </>
+    )
+}
+export default Card;
+___________________________________
+contact.jsx 
+
+// import React from "react";
+// import { Link } from "react-router-dom";
+// import '../Css/contactStyle.css';
+// const Contact = ()=>{
+// return(
+//    <>
+//     <h1>Contact Us</h1>
+//     <form className="contact">
+//         <div>
+//             <label htmlFor="">Name</label>
+//             <input type="text" placeholder="Enter your name" />
+//         </div>
+
+//          <div>
+//             <label htmlFor="">Email</label>
+//             <input type="email" placeholder="Enter your email" />
+//         </div>
+
+//          <div>
+//             <label htmlFor="">Password</label>
+//             <input type="Password" placeholder="Enter your password" />
+//         </div>
+
+//          <div>
+//             <label htmlFor="">Mobile</label>
+//             <input type="mobile" placeholder="Enter your mobile" />
+//         </div>
+//         <div className="btnbox">
+//         <div className="btn">
+//             <Link to='/' className="readmore">Submit Details</Link>
+//         </div>
+//     </div>
+//     </form>
+//    </>
+// )
+// }
+
+
+// export default Contact;
+
+
+
+
+import React from "react";
+import { Link } from "react-router-dom";
+import "../Css/contactStyle.css";
+
+const Contact = () => {
+  return (
+    <>
+      <h1>Contact Us</h1>
+      <form className="contact">
+        <div>
+          <label htmlFor="">Name</label>
+          <input type="text" placeholder="Enter your name" />
+        </div>
+
+        <div>
+          <label htmlFor="">Email</label>
+          <input type="email" placeholder="Enter your email" />
+        </div>
+
+        <div>
+          <label htmlFor="">Password</label>
+          <input type="password" placeholder="Enter your password" />
+        </div>
+
+        <div>
+          <label htmlFor="">Mobile</label>
+          <input type="mobile" placeholder="Enter your mobile" />
+        </div>
+
+        <div className="btnbox">
+          <Link to="/" className="readmore">Submit Details</Link>
+        </div>
+      </form>
+    </>
+  );
+};
+
+export default Contact;
+___________________________________
+error.jsx 
+
+import React from "react";
+const Error = ()=>{
+    return(
+        <h1>page not found </h1>
+    )
+}
+export default Error;
+___________________________________
+footer.jsx 
+
+import React from "react";
+import TwitterIcon from '@mui/icons-material/Twitter';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import '../Css/FooterStyle.css';
+const Footer = ()=>{
+    return(
+      <>
+      <footer>
+        <div className="container container-flex">
+        <div className="iconsdiv">
+<TwitterIcon className="icons"/>
+<FacebookIcon className="icons"/>
+                <InstagramIcon className="icons"/>
+                < LinkedInIcon   className="icons"/>
+               
+        </div>
+        <div className="line">
+          <hr/>
+          <hr/>
+        </div>
+       <div className="copyright">
+          <p>All rights reserved </p>
+          <p>Made with love with Khanm</p>
+        </div>
+      </div>
+      
+      </footer>
+      </>
+    )
+}
+export default Footer;
+___________________________________
+list.jsx 
+
+import React from "react";
+import home from '../assets/home.png'
+import { Link } from "react-router-dom";
+import SearchIcon from '@mui/icons-material/Search';
+import PersonIcon from '@mui/icons-material/Person';
+import CallIcon from '@mui/icons-material/Call';
+import '../Css/ListStyle.css'
+
+const List= ()=>{
+    return(
+        <>
+        <header>
+            <div className="container container-flex">
+            <div className="logoContainer">
+                <img src={home} alt="logo" className="logo" />
+            </div>
+            <nav>
+                <div className="list">
+                    <Link exact to='/'  className="listItems" activeclassname = "activeItem">Home</Link>
+                    <Link to='/about' className="listItems" activeclassname = "activeItem" >About</Link>
+                    <Link to='/contact' className="listItems" activeclassname = "activeItem" >Contact</Link>
+                    <Link to='/Services' className="listItems" activeclassname = "activeItem" >Services</Link>
+                    <Link to='/policies' className="listItems" activeclassname = "activeItem" >Policies</Link>
+                    
+                </div>
+            </nav>
+            <div className="iconsdiv">
+                <SearchIcon  className="icons"/>
+                <PersonIcon  className="icons"/>
+                <CallIcon    className="icons"/>
+            </div>
+        </div>
+        </header>
+        </>
+    )
+}
+export default List; 
+___________________________________
+policies.jsx 
+
+import React from "react";
+import '../Css/policy-style.css';
+const Policies = ()=>{
+return(
+    <>
+    <h1>Privacy Policy</h1>
+    <div className="policy">
+        <ol>
+            <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis est, minus consequuntur, harum iste exercitationem tempora aspernatur quidem, explicabo odit recusandae atque ullam! Aspernatur porro quas placeat, beatae amet aspernatur quidem, explicabo odit recusandae atque ullam! Aspernatur porro optio.</li>
+            <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis est, minus consequuntur, harum iste exercitationem tempora aspernatur quidem, explicabo odit recusandae atque ullam! Aspernatur porro quas placeat, beatae amet aspernatur quidem, explicabo odit recusandae atque ullam! Aspernatur porro optio.</li>
+            <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis est, minus consequuntur, harum iste exercitationem tempora aspernatur quidem, explicabo odit recusandae atque ullam! Aspernatur porro quas placeat, beatae amet aspernatur quidem, explicabo odit recusandae atque ullam! Aspernatur porrooptio.</li>
+            <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis est, minus consequuntur, harum iste exercitationem tempora aspernatur quidem, explicabo odit recusandae atque ullam! aspernatur quidem, explicabo odit recusandae atque ullam! Aspernatur porroAspernatur porro quas placeat, beatae amet optio.</li>
+            <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis est, minus consequuntur, harum iste exercitationem tempora aspernatur quidem, explicabo odit aspernatur quidem, explicabo odit recusandae atque ullam! Aspernatur porrorecusandae atque ullam! Aspernatur porro quas placeat, beatae amet optio.</li>
+            <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis est, minus consequuntur, harum iste exercitationem tempora aspernatur quidem,aspernatur quidem, explicabo odit recusandae atque ullam! Aspernatur porro explicabo odit recusandae atque ullam! Aspernatur porro quas placeat, beatae amet optio.</li>
+        </ol>
+    </div>
+    </>
+)
+}
+export default Policies;
+___________________________________
+same.jsx 
+
+import React from "react";
+import {Link} from "react-router-dom";
+import home from '../assets/home.jpeg';
+const Same = (props)=>{
+return(
+    <>
+    <div className="mainsection">
+    <div className="contentbox">
+        <h1>{props.title}</h1>
+        <p>{props.text}</p>
+        <div className="btnbox">
+        <div className="btn">
+            <Link to='/about' className="readmore">{props.btn}</Link>
+        </div>
+    </div>
+    </div>
+    
+    
+    <div className="imgcontainer">
+        <img src={props.imgsrc} alt="home img" />
+    </div>
+       </div>
+    </>
+)
+}
+export default Same;
+___________________________________
+services.jsx 
+
+
+import React from "react";
+ import home from '../assets/home.jpeg';
+import hom2 from '../assets/hom2.jpeg';
+import home3 from '../assets/home3.jpeg';
+ import { Link } from "react-router-dom";
+import '../Css/ServiceStyle.css';
+
+ import Card from "./Card";
+
+const Services = ()=>{
+return(
+ <>
+ <h1>Our Services</h1>
+ <div className="services">
+  <Card
+  serviceImg = {home}
+  serviceText = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae minima aut ex accusamus, reprehenderit, dolore, atque corrupti totam animi ab facilis. Consequuntur eos pariatur aperiam cum quaerat explicabo provident nulla."
+  serviceBtn = 'More Detail'
+
+  
+  />
+  <Card 
+  serviceImg = {hom2}
+  serviceText = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae minima aut ex accusamus, reprehenderit, dolore, atque corrupti totam animi ab facilis. Consequuntur eos pariatur aperiam cum quaerat explicabo provident nulla.'
+serviceBtn = 'Extra Services'
+  
+  />
+  <Card
+  serviceImg = {home3}
+  serviceText = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae minima aut ex accusamus, reprehenderit, dolore, atque corrupti totam animi ab facilis. Consequuntur eos pariatur aperiam cum quaerat explicabo provident nulla.'
+  serviceBtn = 'Read More'
+  />
+  
+
+ </div>
+
+
+
+
+
+
+
+
+
+ </>
+   
+  
+   
+        
+
+)
+}
+export default Services;
+___________________________________
+
+contact.css 
+
+/* .contact{max-width: 990px;
+margin: 32px auto;
+}
+input{width: 100%;
+padding:12px;
+margin-bottom: 16px;
+border: 2px double var(--mainColor);
+outline: none;
+font-size: 16px;}
+label{font-size: 16px;
+font-weight: bold;
+padding-bottom: 10px;}
+
+@media(max-width:576px){.contact{
+
+width: 70%;}
+h1{font-size: 40px;}} */
+
+
+.contact {
+  max-width: 600px;
+  width: 100%;
+  margin: 32px auto;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 16px;
+  border: 2px double var(--mainColor);
+  outline: none;
+  font-size: 16px;
+}
+
+label {
+  font-size: 16px;
+  font-weight: bold;
+  padding-bottom: 10px;
+  display: block;
+}
+
+.btnbox {
+  text-align: center;
+}
+
+.readmore {
+  background-color: var(--mainColor);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+/* responsive */
+@media (max-width: 576px) {
+  .contact {
+    width: 80%;
+  }
+  h1 {
+    font-size: 28px;
+  }
+}
+___________________________________
+footerstyle.css 
+
+footer{
+
+background-color: #000;
+width: 100%;
+padding: 10px;}
+
+.line{width: 30%;
+}
+hr{margin-bottom: 10px;}
+.icons{margin-right: 10px;}
+.copyright{text-align: center;
+color:white;
+margin-bottom: 10px;}
+
+/* mediaquery */
+@media(max-width:660px){.line{width: 40%;}
+.iconsdiv{display: flex;
+    gap: 10px !important;}
+footer .icons{padding-bottom: 10px;}}
+    @media(max-width:440px){hr{display: none;}}
+    ___________________________________
+    liststyle.css 
+
+    :root{
+    --mainColor :#880088;
+}
+header{background-color: var(--mainColor);}
+.container{width: 95%;
+
+margin: 0 auto;
+max-width: 1200px;}
+.container-flex{display: flex;
+justify-content: space-between;
+align-items: center;}
+.logo{width: 80px;
+padding: 0.5em 0;
+border-radius: 50%;}
+
+.listItems{margin-left: 2em;
+color:white;
+text-decoration: none;
+font-size: 24px;
+ font-family: "Open Sans", sans-serif;}
+ .listItems:hover{border-bottom: 2px solid white;}
+ .activeItem{color: orange;
+border-bottom: .1em double #fff;}
+
+.icons{color: white;
+font-size: 24px !important;}
+.iconsdiv{display: flex;
+gap:20px !important;}
+
+/* mediaquery */
+@media(max-width:850px){.container-flex{flex-direction:column;}
+header{padding-bottom: 20px;}}
+@media(max-width:600px){.listItems{margin-left: 0.5em;
+font-size: 18px;}
+
+.container-flex{padding-bottom: 20px;}}
+___________________________________
+policystyle.css 
+
+.policy{
+    max-width: 990px;
+    margin: auto;
+}
+li{font-size: 18px;
+margin: 4px 0;
+font-family:"Open Sans", sans-serif;}
+
+@media(max-width:1000px){.policy{width: 90%;}}
+@media(max-width:700px){.policy{width: 70%;}
+
+li{font-size: 14px;
+margin: 4px 0;
+}
+h1{font-size: 25px;}}
+___________________________________
+servicestyle.css 
+
+.services{max-width: 100%;
+
+margin:16px 20px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+flex-wrap: wrap;}
+h1{text-align: center;
+    margin-top: 20px;
+}
+.card{flex-basis:32%;
+text-align: center;
+box-shadow: 0 0 3px #000;
+padding: 16px;}
+.card img{width: 400px;
+height: 300px;
+padding-top: 20px;}
+
+@media(max-width:768px){.services{flex-direction: column;
+gap: 20px;}
+.services{width: 80%;
+text-align: center;}
+.card img{width: 300px;
+height: 260px;}
+    }
+
+       </xmp>
+
+            </code></pre>
+    </div>
+<!------- question 1 completed ----- -->
+ <!----------------------------------- Question No 2 ---------------------->
+    <div class="card question-card">
+      <h2> Question 2❓ </h2>
+      <p>Q:  </p>
+    </div>
+  <!----- answers ----->
+    <div class="card answer-card">
+      <h2>✅ Answer</h2>
+      <p>
+       
+      </p>
+    </div>
+<!-------- example -------->
+    <div class="card example1-card">
+      <h2>💡 Example</h2>
+      <pre><code>
+       
+
+            </code></pre>
+    </div>
+<!------- question 2 completed ----- -->
+ <!----------------------------------- Question No 3 ---------------------->
+    <div class="card question-card">
+      <h2> Question 3❓ </h2>
+      <p>Q:  </p>
+    </div>
+  <!----- answers ----->
+    <div class="card answer-card">
+      <h2>✅ Answer</h2>
+      <p>
+       
+      </p>
+    </div>
+<!-------- example -------->
+    <div class="card example1-card">
+      <h2>💡 Example</h2>
+      <pre><code>
+       
+
+            </code></pre>
+    </div>
+<!------- question 3 completed ----- -->
+ <!----------------------------------- Question No 4 ---------------------->
+    <div class="card question-card">
+      <h2> Question 4❓ </h2>
+      <p>Q:  </p>
+    </div>
+  <!----- answers ----->
+    <div class="card answer-card">
+      <h2>✅ Answer</h2>
+      <p>
+       
+      </p>
+    </div>
+<!-------- example -------->
+    <div class="card example1-card">
+      <h2>💡 Example</h2>
+      <pre><code>
+       
+
+            </code></pre>
+    </div>
+<!------- question 4 completed ----- -->
+ <!----------------------------------- Question No 5 ---------------------->
+    <div class="card question-card">
+      <h2> Question 5❓ </h2>
+      <p>Q:  </p>
+    </div>
+  <!----- answers ----->
+    <div class="card answer-card">
+      <h2>✅ Answer</h2>
+      <p>
+       
+      </p>
+    </div>
+<!-------- example -------->
+    <div class="card example1-card">
+      <h2>💡 Example</h2>
+      <pre><code>
+       
+
+            </code></pre>
+    </div>
+<!------- question 5 completed ----- -->
+ <!----------------------------------- Question No 6 ---------------------->
+    <div class="card question-card">
+      <h2> Question 6❓ </h2>
+      <p>Q:  </p>
+    </div>
+  <!----- answers ----->
+    <div class="card answer-card">
+      <h2>✅ Answer</h2>
+      <p>
+       
+      </p>
+    </div>
+<!-------- example -------->
+    <div class="card example1-card">
+      <h2>💡 Example</h2>
+      <pre><code>
+       
+
+            </code></pre>
+    </div>
+<!------- question 6 completed ----- -->
+ <!----------------------------------- Question No 7 ---------------------->
+    <div class="card question-card">
+      <h2> Question 7❓ </h2>
+      <p>Q:  </p>
+    </div>
+  <!----- answers ----->
+    <div class="card answer-card">
+      <h2>✅ Answer</h2>
+      <p>
+       
+      </p>
+    </div>
+<!-------- example -------->
+    <div class="card example1-card">
+      <h2>💡 Example</h2>
+      <pre><code>
+       
+
+            </code></pre>
+    </div>
+<!------- question 7 completed ----- -->
+ <!----------------------------------- Question No 8 ---------------------->
+    <div class="card question-card">
+      <h2> Question 8❓ </h2>
+      <p>Q:  </p>
+    </div>
+  <!----- answers ----->
+    <div class="card answer-card">
+      <h2>✅ Answer</h2>
+      <p>
+       
+      </p>
+    </div>
+<!-------- example -------->
+    <div class="card example1-card">
+      <h2>💡 Example</h2>
+      <pre><code>
+       
+
+            </code></pre>
+    </div>
+<!------- question 8 completed ----- -->
+ <!----------------------------------- Question No 9 ---------------------->
+    <div class="card question-card">
+      <h2> Question 9❓ </h2>
+      <p>Q:  </p>
+    </div>
+  <!----- answers ----->
+    <div class="card answer-card">
+      <h2>✅ Answer</h2>
+      <p>
+       
+      </p>
+    </div>
+<!-------- example -------->
+    <div class="card example1-card">
+      <h2>💡 Example</h2>
+      <pre><code>
+       
+
+            </code></pre>
+    </div>
+<!------- question 9 completed ----- -->
+ <!----------------------------------- Question No 10 ---------------------->
+    <div class="card question-card">
+      <h2> Question 10❓ </h2>
+      <p>Q:  </p>
+    </div>
+  <!----- answers ----->
+    <div class="card answer-card">
+      <h2>✅ Answer</h2>
+      <p>
+       
+      </p>
+    </div>
+<!-------- example -------->
+    <div class="card example1-card">
+      <h2>💡 Example</h2>
+      <pre><code>
+       
+
+            </code></pre>
+    </div>
+<!------- question 11 completed ----- -->
+ <!----------------------------------- Question No 12 ---------------------->
+    <div class="card question-card">
+      <h2> Question 12❓ </h2>
+      <p>Q:  </p>
+    </div>
+  <!----- answers ----->
+    <div class="card answer-card">
+      <h2>✅ Answer</h2>
+      <p>
+       
+      </p>
+    </div>
+<!-------- example -------->
+    <div class="card example1-card">
+      <h2>💡 Example</h2>
+      <pre><code>
+       
+
+            </code></pre>
+    </div>
+<!------- question 12 completed ----- -->
+ <!----------------------------------- Question No 13 ---------------------->
+    <div class="card question-card">
+      <h2> Question 13❓ </h2>
+      <p>Q:  </p>
+    </div>
+  <!----- answers ----->
+    <div class="card answer-card">
+      <h2>✅ Answer</h2>
+      <p>
+       
+      </p>
+    </div>
+<!-------- example -------->
+    <div class="card example1-card">
+      <h2>💡 Example</h2>
+      <pre><code>
+       
+
+            </code></pre>
+    </div>
+<!------- question 13 completed ----- -->
+ <!----------------------------------- Question No 14 ---------------------->
+    <div class="card question-card">
+      <h2> Question 14❓ </h2>
+      <p>Q:  </p>
+    </div>
+  <!----- answers ----->
+    <div class="card answer-card">
+      <h2>✅ Answer</h2>
+      <p>
+       
+      </p>
+    </div>
+<!-------- example -------->
+    <div class="card example1-card">
+      <h2>💡 Example</h2>
+      <pre><code>
+       
+
+            </code></pre>
+    </div>
+<!------- question 14 completed ----- -->
+ <!----------------------------------- Question No 15 ---------------------->
+    <div class="card question-card">
+      <h2> Question 15❓ </h2>
+      <p>Q:  </p>
+    </div>
+  <!----- answers ----->
+    <div class="card answer-card">
+      <h2>✅ Answer</h2>
+      <p>
+       
+      </p>
+    </div>
+<!-------- example -------->
+    <div class="card example1-card">
+      <h2>💡 Example</h2>
+      <pre><code>
+       
+
+            </code></pre>
+    </div>
+<!------- question 15 completed ----- -->
+ <!----------------------------------- Question No 15 ---------------------->
+    <div class="card question-card">
+      <h2> Question 15❓ </h2>
+      <p>Q:  </p>
+    </div>
+  <!----- answers ----->
+    <div class="card answer-card">
+      <h2>✅ Answer</h2>
+      <p>
+       
+      </p>
+    </div>
+<!-------- example -------->
+    <div class="card example1-card">
+      <h2>💡 Example</h2>
+      <pre><code>
+       
+
+            </code></pre>
+    </div>
+<!------- question 15 completed ----- -->
+ <!----------------------------------- Question No 16 ---------------------->
+    <div class="card question-card">
+      <h2> Question 16❓ </h2>
+      <p>Q:  </p>
+    </div>
+  <!----- answers ----->
+    <div class="card answer-card">
+      <h2>✅ Answer</h2>
+      <p>
+       
+      </p>
+    </div>
+<!-------- example -------->
+    <div class="card example1-card">
+      <h2>💡 Example</h2>
+      <pre><code>
+       
+
+            </code></pre>
+    </div>
+<!------- question 16 completed ----- -->
+ <!----------------------------------- Question No 17 ---------------------->
+    <div class="card question-card">
+      <h2> Question 17❓ </h2>
+      <p>Q:  </p>
+    </div>
+  <!----- answers ----->
+    <div class="card answer-card">
+      <h2>✅ Answer</h2>
+      <p>
+       
+      </p>
+    </div>
+<!-------- example -------->
+    <div class="card example1-card">
+      <h2>💡 Example</h2>
+      <pre><code>
+       
+
+            </code></pre>
+    </div>
+<!------- question 17 completed ----- -->
+ <!----------------------------------- Question No 18 ---------------------->
+    <div class="card question-card">
+      <h2> Question 18❓ </h2>
+      <p>Q:  </p>
+    </div>
+  <!----- answers ----->
+    <div class="card answer-card">
+      <h2>✅ Answer</h2>
+      <p>
+       
+      </p>
+    </div>
+<!-------- example -------->
+    <div class="card example1-card">
+      <h2>💡 Example</h2>
+      <pre><code>
+       
+
+            </code></pre>
+    </div>
+<!------- question completed ----- -->
+ <!----------------------------------- Question No 19 ---------------------->
+    <div class="card question-card">
+      <h2> Question 19❓ </h2>
+      <p>Q:  </p>
+    </div>
+  <!----- answers ----->
+    <div class="card answer-card">
+      <h2>✅ Answer</h2>
+      <p>
+       
+      </p>
+    </div>
+<!-------- example -------->
+    <div class="card example1-card">
+      <h2>💡 Example</h2>
+      <pre><code>
+       
+
+            </code></pre>
+    </div>
+<!------- question 19 completed ----- -->
+ <!----------------------------------- Question No 20 ---------------------->
+    <div class="card question-card">
+      <h2> Question 20❓ </h2>
+      <p>Q:  </p>
+    </div>
+  <!----- answers ----->
+    <div class="card answer-card">
+      <h2>✅ Answer</h2>
+      <p>
+       
+      </p>
+    </div>
+<!-------- example -------->
+    <div class="card example1-card">
+      <h2>💡 Example</h2>
+      <pre><code>
+       
+
+            </code></pre>
+    </div>
+<!------- question 20 completed ----- -->
+
+    
+
+    
+<!---- main div closed below--- -->
+  </div>
+</body>
+</html> 
