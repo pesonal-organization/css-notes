@@ -414,20 +414,65 @@ flex-basis = 25%</pre>
  <!----------------------------------- Question No 7 ---------------------->
     <div class="card question-card">
       <h2> Question 7❓ </h2>
-      <p>Q:  </p>
+      <p>Q: footer setting?  </p>
     </div>
   <!----- answers ----->
     <div class="card answer-card">
       <h2>✅ Answer</h2>
       <p>
-       
+       keep all the routes file in div app-layout and apply css on app-layout in App.css <br>
+       see in exmaple;<br> 
+       footer always remain in bottom and according to the page content and remove given footer positison fixed and bottom 0 also.
       </p>
     </div>
 <!-------- example -------->
     <div class="card example1-card">
       <h2>💡 Example</h2>
       <pre><code>
-       
+      <xmp>
+        html,body,#root .app-layout{
+        height: 100%;
+        margin : 0;
+        display:flex;
+        flex-direction: column;
+        }
+
+        ___________________________________
+        wrap routes file like this
+
+
+        import React from "react";
+import {Routes,Route} from 'react-router-dom'
+import Home from './Components/Home';
+import About from "./Components/About";
+import Policies from "./Components/Policies";
+import Services from "./Components/Services";
+import Contact from "./Components/Contact";
+import Error from "./Components/Error";
+import List from "./Components/list";
+import Footer from './Components/Footer';
+
+const App = ()=>{
+  return(
+    <>
+   <div className="app-layout">
+     <List/>
+    <Routes>
+<Route exact path="/" element={<Home/>}/>
+<Route path="/about" element={<About/>}/>
+<Route path="/policies" element={<Policies/>}/>
+<Route path="/contact" element={<Contact/>}/>
+<Route path="/services" element={<Services/>}/>
+<Route path="*" element={<Error/>}/>
+
+    </Routes>
+    <Footer/>
+   </div>
+    </>
+  )
+}
+export default App;
+      </xmp>
 
             </code></pre>
     </div>
